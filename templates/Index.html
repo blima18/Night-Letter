@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    textarea:focus, input:focus{
+        outline: none;
+    }
+
+    table, th, td {
+        font-family: 'Arial';
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    input {
+        background-color: transparent;
+        border: 0px solid;
+        height: 20px;
+        width: 160px;
+    }
+
+    .info {
+        color: blue;
+        font-family: 'Arial';
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .small-info {
+        font-size: 14px;
+        margin-bottom: 30px;
+        font-family: 'Arial';
+    }
+
+    .field-info{
+        font-family: 'Arial';
+        display: flex;
+        align-items: center;
+    }
+
+    .field-left{
+        width: 20%;
+    }
+
+    .field-right{
+        width: 80%;
+        border: none;
+        align-items: center;
+    }
+
+    .field-table{
+        width: 90%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    .table-row-name{
+        text-align: left;
+    }
+
+    .table-row-over-header{
+        border: 1px solid black;
+        font-family: 'Arial';
+        font-size: 8px;
+        border-collapse: collapse;
+    }
+
+    .table-row-header{
+        background-color: #D9D9D9;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-collapse: collapse;
+        font-family: 'Arial';
+    }
+
+    .th-field{
+        border: 1px solid black;
+        font-family: 'Arial';
+    }
+
+    .select-text-field{
+        width: 15%;
+        background-color: #F4F5F7;
+        color: #595959;
+        text-align: center;
+        display: flex;
+        border-radius: 15px;
+        height: 45.33px;
+        margin-right: 3px;
+        font-weight: bold;
+        align-items: center;
+    }
+
+    .button-delete-value:hover{
+        background-color: #FFBDAD;
+    }
+
+    .button-delete-value{
+        width: 25%;
+        background-color: #F4F5F7;
+        border: none;
+        border-bottom-right-radius: 15px;
+        cursor: pointer;
+        border-top-right-radius: 15px;
+    }
+
+    .button-finish:hover{
+        background-color: #6E6E6E;
+        color: black;
+    }
+
+    .button-finish{
+        width: 20%;
+        margin-left: 40%;
+        margin-top: 30px;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        background: darkgray;
+        font-weight: 900;
+        font-size: 16px;
+        color: #3D3D3D;
+    }
+    
+    .num-cell{
+        width: 100%;
+        border: none;
+        text-align: center;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <div class="info">
+        Note:  Items in Blue Text in this form are to clarify directions such as: the type of information required, from whom, etc.  This text should be deleted when sent.
+        <br>Copy and Paste (Keep Source Formatting (K)) the black bordered area into an e-mail.  You may have to adjust the DTG and Notes columns within e-mail software to not wrap text prior to sending.
+    </div>
+    <div class="small-info">
+        • A <b>Stop Ship Notification</b> e-mail is to be sent out for <b>Alert Open, Night Letter</b>, and <b>Alert</b> Lifted.  The Alert Open is the first e-mail sent out after the appropriate approvals have been obtained.  Thereafter, the lead plant PVT Manager will issue one Stop Ship Notification - Night Letter for each BSAQ Number at the end of each business day until such time as the Technical Direction has been established.  After the Technical Direction has been established, then the cadence is reduced to twice a week (Monday and Thursday) until such time as the Stop Ship, In-Transit Stop Ship, or Stop Build has been lifted.  This notification e-mail applies to all the types of campaigns and stop ships/stop builds listed in blue text below.  If there are no updates, then please state this next to the status date in the letter.
+        <br><b>Remember</b>: Potential Functional Concerns do not apply to Domestic In-Transit Stop Ships.
+        <br>If Domestic and Export units are affected, then must have an ITSS to cover both campaign types with the same BSAQ#.
+        <br>Within 48 hours of approval, the Stop Ship Notification must be updated with the draw-down plan (Form 03-134-1), which will include the number of vehicles at the Mixing Center, Distribution Compound or Port and the Final Release date for the vehicles.
+        <br>• Within 48 hours of approval, the Stop Ship Notification - Night Letter must be updated with the Drawdown Plan.  A Drawdown Plan is required when have at least 1,000 units on an individual SS/ITSS, or SS/ITSS affects at least 500 vehicles with 2 or more concerns.  This Drawdown Plan will be updated by the Quality Manager every (5) Business Days until complete.  Please ensure you include a date in the title box to inform management of the date the Drawdown Plan was last updated.  Refer to section 7.2.21 & 7.6.7 in the procedure.
+    </div>
+    <div class="small-info">
+        •  Use <b>Bold blue text</b> to designate what has changed from the prior day's letter.  <b>Standard blue text color in Excel</b> (choose More Colors, Custom tab) is as follows:
+        <br>Color Model: RGB
+        <br>Red: 0
+        <br>Green: 0
+        <br>Blue: 255
+    </div>
+    <hr>
+    <div class="field-info">
+        <p class="field-left">
+          <b>
+            Subject (example):
+          </b>
+        </p>
+        <p class="field-right">
+            SAQ2017434002 - 17MY Continental (D544) - ITSS - Type 2, Trunk Water Leak - Trough Hider Push Pin, Export - China & South Korea Units ONLY - Alert Open
+        </p>
+    </div>
+    <div class="field-info">
+        <p class="field-left">
+          <b>
+            Campaign Type:
+          </b>
+        </p>
+        <p class="field-right">
+            ITSS, SS, Stop Build
+        </p>
+    </div>
+    <div class="field-info">
+        <p class="field-left">
+          <b>
+            Type of Concern:
+          </b>
+        </p>
+        <p class="field-right">
+            Type 1 = Potential Regulatory or Safety Concern<br>
+            Type 2 = Potential Functional Concern<br>
+            Type 3 = Potential Craftsmanship Concern
+        </p>
+    </div>
+    <hr>
+    <form style="display: grid; align-items: center;" enctype="multipart/form-data" id="page" action="" method="post">
+        <div style="margin-bottom: 10px;" class="field-info">
+                <div class="field-left">
+                    <b>
+                        Lead Plant:
+                    </b>
+                    <select id="lead_plant" onchange="plant_picked({{ items[1] }}, {{ items[2] }})" style="margin-right: 10px; width: 40%; padding: 5px; float: right;">
+                    <option value="-">-</option>
+                    {% for item in items[3] %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="field-right" style="display: flex; align-items: center;">
+                    <textarea oninput="OnInput('Lead Plant:')" class="field-right" style="width: 100%" id="Lead Plant:" name="Lead Plant:" placeholder="Lead Plant"></textarea>
+                </div>
+        </div>
+        <div style="margin-bottom: 10px;" class="field-info">
+                <div class="field-left">
+                    <b>
+                        Status:
+                    </b>
+                </div>
+                <textarea readonly class="field-right" id="Status:" name="Status:" placeholder="Under Approval">Under Approval</textarea>
+        </div>
+        <div style="margin-bottom: 10px;" class="field-info">
+                <div class="field-left">
+                    <b>
+                        Subject:
+                    </b>
+                    <select disabled id="subject_picker" onchange="subject_picked({{ items[1] }}, {{ items[2] }})" style="margin-right: 10px; width: 40%; padding: 5px; float: right;">
+                    <option value="-">-</option>
+                    </select>
+                </div>
+                <textarea oninput="OnInput('Subject:')" class="field-right" id="Subject:" name="Subject:" placeholder="BSAQ # - Lead Program MY (Vehicle Line Name) (Program ID code) - (Campaign Type) - (Type of Concern) - (Issue Description/Component/System Affected), (Export/Domestic/ Export & Domestic) - (Specific Markets Affected) - (Alert Open, Night Letter, Alert Lifted)">BSAQ # - Lead Program MY (Vehicle Line Name) (Program ID code) - (Campaign Type) - (Type of Concern) - (Issue Description/Component/System Affected), (Export/Domestic/ Export & Domestic) - (Specific Markets Affected) - (Alert Open, Night Letter, Alert Lifted)</textarea>
+        </div>
+        <div style="margin-bottom: 10px;" class="field-info">
+                <div class="field-left">
+                    <p>
+                        <b>
+                        Stop shipment approved:
+                        </b>
+                    </p>
+                </div>
+                <textarea style="visibility: hidden; display: none" id="Approved:" name="Approved:"></textarea>
+                <input onchange="change_check()" style="width: auto" type="checkbox" id="Approved_check" value="no">
+        </div>
+        <div style="margin-bottom: 10px;" class="field-info">
+                <div class="field-left">
+                    <b>
+                        Plant(s) Affected:
+                    </b>
+                    <select id="plants_affected" onchange="add_plant_option_field('Plant(s) Affected:', 'plants_affected', {{ items[1] }}, {{ items[2] }})" style="margin-right: 10px; width: 40%; padding: 5px; float: right;">
+                        <option>-</option>
+                        <option value="KENTUCKY TRUCK PLANT">KENTUCKY TRUCK PLANT</option>
+                        <option value="CHICAGO PLANT BUILD">CHICAGO PLANT BUILD</option>
+                        <option value="MICHIGAN ASSEMBLY">MICHIGAN ASSEMBLY</option>
+                        <option value="DEARBORN PLANT BUILD">DEARBORN PLANT BUILD</option>
+                        <option value="KANSAS CITY PLANT BUILD">KANSAS CITY PLANT BUILD</option>
+                        <option value="CUAUTITLAN PLANT BUILD">CUAUTITLAN PLANT BUILD</option>
+                        <option value="ROUGE ELECTRICAL VHCL CNTR">ROUGE ELECTRICAL VHCL CNTR</option>
+                        <option value="FLATROCK ASSEMBLY PLANT - USA">FLATROCK ASSEMBLY PLANT - USA</option>
+                        <option value="CHICAGO SHO CENTER">CHICAGO SHO CENTER</option>
+                        <option value="OAKVILLE PLANT BUILD">OAKVILLE PLANT BUILD</option>
+                        <option value="OHIO ASSEMBLY PT BUILD">OHIO ASSEMBLY PT BUILD</option>
+                        <option value="LOUISVILLE PLANT BUILD">LOUISVILLE PLANT BUILD</option>
+                        <option value="DETROIT CHASSIS PLANT">DETROIT CHASSIS PLANT</option>
+                        <option value="HERMOSILLO ASSY PLANT">HERMOSILLO ASSY PLANT</option>
+                    </select>
+                </div>
+                <div class="field-right" style="display: flex;" id="Plant(s) Affected:_body">
+                    <textarea oninput="OnInput('Plant(s) Affected:', {{ items[1] }}, {{ items[2] }})" style="width: 100%; visibility:hidden" class="field-right" id="Plant(s) Affected:" name="Plant(s) Affected:" placeholder="Plant(s) Affected:"></textarea>
+                </div>
+        </div>
+        {% for item in items[0] %}
+            {% if item.field != "Subject:" and item.field != "Lead Plant:" and item.field != "Status:" and item.field != "Approved:" and item.field != "Plant(s) Affected:" %}
+                <div class="field-info">
+                    <p class="field-left">
+                        <b>
+                            {{ item.field }}
+                        </b>
+                    </p>
+                    <table class="field-right" id="{{ item.field }}_body">
+                        <tr>
+                            <th>
+                                <textarea onpaste="preventImageInput(event, '{{ item.field }}_body')" oninput="OnInput('{{ item.field }}', {{ items[1] }}, {{ items[2] }})" class="field-right" style="width: 100%" id="{{ item.field }}" name="{{ item.field }}" placeholder="{{ item.placeholder }}"></textarea>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <table id="transit_table" class="field-table">
+            <tr>
+                <th> </th>
+                <th class="table-row-over-header">Awaiting<br> CHECK</th>
+                <th class="table-row-over-header">Awaiting<br> REPAIR</th>
+                <th class="table-row-over-header">Checked  OK +<br> OK with Repair</th>
+                <th class="table-row-over-header"># of NOK units<br> ACTUALLY<br> REPAIRED</th>
+                <th> </th>
+                <th><button type="button" onclick="get_values({{ items[4] }}, {{ items[1] }}, {{ items[2] }})">Get Values</button> </th>
+            </tr>
+            <tr>
+                <th class="table-row-name">Repair Status:</th>
+                <th class="table-row-header">Suspect</th>
+                <th class="table-row-header">NOK</th>
+                <th class="table-row-header">OK</th>
+                <th class="table-row-header">Repaired</th>
+                <th class="table-row-header">DTG</th>
+                <th class="table-row-header">Notes</th>
+            </tr>
+            <tr>
+                <th class="table-row-name" style="border: 1px solid black; border-bottom: 2px solid black; border-top: 2px solid black;">Sub-total</th>
+                <th class="th-field" style="font-size: 10px; font-weight: normal" id="suspect"> </th>
+                <th class="th-field" style="font-size: 10px; font-weight: normal" id="nok"> </th>
+                <th class="th-field" style="font-size: 10px; font-weight: normal" id="ok"> </th>
+                <th class="th-field" style="font-size: 10px; font-weight: normal" id="repaired"> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+            <tr>
+                <th class="table-row-name" style="border: 2px solid black;">Total Units on Hold:</th>
+                <th style="border: 2px solid black;" id="total"> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </table>
+        <hr>
+        <button class="button-finish" id="run_button" >Save & Make Draft E-mail</button>
+    </form>
+
+    <script>
+        function preventImageInput(e, target_body) {
+            const images = e.clipboardData.files;
+            if (images != null && images.length){
+                create_image_treatment(images, target_body, URL.createObjectURL(images[0]));
+            }
+        }
+
+        function create_image_treatment(images, target_body, source){
+            var target = document.getElementById(target_body);
+            if (images != null && images.length) {
+                var name_div = target_body.replace("_body", "_images");
+
+                if (target.rows.length == 1){
+                    var row = target.insertRow(-1);
+                    var row_field = row.insertCell(0);
+
+                    var field = document.createElement("div");
+                    field.setAttribute("name", name_div);
+                    field.setAttribute("id", name_div);
+                    field.contentEditable = true;
+                    row_field.appendChild(field);
+                }else{
+                    var row = target.rows[1]
+                    var row_field = row.cells[0]
+                }
+                var div_body = document.getElementById(name_div);
+
+                var field = document.createElement("INPUT");
+                var name = target_body.replace("_body", "_image") + row_field.childElementCount;
+
+                field.setAttribute("name", name);
+                field.setAttribute("id", name);
+                field.type = "file";
+                field.style.visibility = "hidden";
+                field.style.display = "none";
+
+                if (source.includes("data:image")){
+                    var base64Value = source.replace("data:image/png;base64,", "");
+                    var decodedData = atob(base64Value);
+                    var byteArray = new Uint8Array(decodedData.length);
+
+                    for (var i = 0; i < decodedData.length; i++) {
+                    byteArray[i] = decodedData.charCodeAt(i);
+                    }
+
+                    var blob = new Blob([byteArray], { type: 'image/png' });
+                    var fileName = 'image.png';
+                    var file = new File([blob], fileName, { type: 'image/png' });
+                    var data_transfer = new DataTransfer();
+                    data_transfer.items.add(file);
+                    field.files = data_transfer.files;
+                }
+                else{
+                    field.files = images;
+                }
+
+                row_field.appendChild(field);
+
+                var field_image = document.createElement("img");
+                field_image.src = source;
+
+                div_body.addEventListener("keydown", function(event){
+                    delete_image_body(event, target_body);
+                })
+                div_body.appendChild(field_image);
+            }
+        }
+
+        function delete_image_body(e, target_body){
+            var target = document.getElementById(target_body);
+
+            // Checking for Backspace.
+            if (e.keyCode == 8) {
+                if (target.rows.length > 1){
+                    target.deleteRow(1);
+                }
+            }
+        }
+
+        function add_row(row_name){
+            var table = document.getElementById("transit_table");
+            var row = table.insertRow(table.rows.length - 2);
+
+            var row_field = row.insertCell(0);
+            row_field.setAttribute("style", "border: 1px solid black; border-top: 2px solid black; font-weight: bold");
+            row_field.innerHTML = row_name + ":";
+
+            var suspect = row.insertCell(1);
+            suspect.setAttribute("class", "th-field");
+            var suspect_field = document.createElement("INPUT");
+            suspect_field.setAttribute("name", row_name + "_suspect");
+            suspect_field.setAttribute("id", row_name + "_suspect");
+            suspect_field.setAttribute("class", "num-cell");
+            suspect_field.addEventListener("input", recalculate);
+            suspect.appendChild(suspect_field);
+
+            var nok = row.insertCell(2);
+            nok.setAttribute("class", "th-field");
+            var nok_field = document.createElement("INPUT");
+            nok_field.setAttribute("name", row_name + "_nok");
+            nok_field.setAttribute("id", row_name + "_nok");
+            nok_field.setAttribute("class", "num-cell");
+            nok_field.addEventListener("input", recalculate);
+            nok.appendChild(nok_field);
+
+            var ok = row.insertCell(3);
+            ok.setAttribute("class", "th-field");
+            var ok_field = document.createElement("INPUT");
+            ok_field.setAttribute("name", row_name + "_ok");
+            ok_field.setAttribute("id", row_name + "_ok");
+            ok_field.setAttribute("class", "num-cell");
+            ok_field.addEventListener("input", recalculate);
+            ok.appendChild(ok_field);
+
+            var repaired = row.insertCell(4);
+            repaired.setAttribute("class", "th-field");
+            var repaired_field = document.createElement("INPUT");
+            repaired_field.setAttribute("name", row_name + "_repaired");
+            repaired_field.setAttribute("id", row_name + "_repaired");
+            repaired_field.setAttribute("class", "num-cell");
+            repaired_field.addEventListener("input", recalculate);
+            repaired.appendChild(repaired_field);
+
+            var dtg = row.insertCell(5);
+            dtg.setAttribute("class", "th-field");
+            var dtg_field = document.createElement("INPUT");
+            dtg_field.setAttribute("name", row_name + "_dtg");
+            dtg_field.setAttribute("id", row_name + "_dtg");
+            dtg_field.setAttribute("class", "num-cell");
+            dtg_field.addEventListener("input", recalculate);
+            dtg.appendChild(dtg_field);
+
+            var notes = row.insertCell(6);
+            notes.setAttribute("class", "th-field");
+            var notes_field = document.createElement("INPUT");
+            notes_field.setAttribute("name", row_name + "_notes");
+            notes_field.setAttribute("id", row_name + "_notes");
+            notes_field.setAttribute("class", "num-cell");
+            notes_field.addEventListener("input", recalculate);
+            notes.appendChild(notes_field);
+        }
+        
+        function add_row_date(date_target, name, subjects, total_fields){
+            date_table = document.getElementById(date_target + "_body");
+            var row = date_table.insertRow(date_table.rows.length);
+            var row_field = row.insertCell(0);
+            var text_field = document.createElement("TEXTAREA");
+            text_field.setAttribute("name", date_target + "_" + name);
+            text_field.setAttribute("id", date_target + "_" + name);
+            text_field.setAttribute("class", "field-right");
+            text_field.setAttribute("style", "width: 100%");
+            text_field.setAttribute("placeholder", "DD-MMM-YYYY / " + name);
+            text_field.innerHTML = "DD-MMM-YYYY / " + name;
+
+            text_field.addEventListener("change", function(){
+                OnInput(date_target + "_" + name, subjects, total_fields)
+            });
+            row_field.appendChild(text_field);
+        }
+
+        function delete_plant_field(parent_name, child_name, target, value){
+            parent = document.getElementById(parent_name);
+            child  = document.getElementById(child_name);
+            document.getElementById("transit_table").deleteRow(Array.prototype.indexOf.call(parent.children, child) + 2);
+            document.getElementById("Plant(s) Clean Point Date(s):_body").deleteRow(Array.prototype.indexOf.call(parent.children, child) + 1);
+            document.getElementById("Date Repair Parts Available:_body").deleteRow(Array.prototype.indexOf.call(parent.children, child) + 1);
+            document.getElementById("Date Repair Instructions Avail:_body").deleteRow(Array.prototype.indexOf.call(parent.children, child) + 1);
+
+            parent.removeChild(child);
+
+            var teste = (100 - 15 * (parent.childNodes.length - 3)) + "%"
+            document.getElementById(target).style.width = teste;
+            document.getElementById(target).value = document.getElementById(target).value.replace("," + value,'');
+        }
+        
+        function reset_transit_table(){
+            num_rows_table = document.getElementById("transit_table").rows.length - 4
+            for (let i = 0; i < num_rows_table; i++){
+                document.getElementById("transit_table").deleteRow(2);
+            }
+        }
+        
+        function reset_plant_items(){
+            var plant_body_child_count = document.getElementById("Plant(s) Affected:_body").childNodes.length;
+            for (let i = 0; i < plant_body_child_count - 3; i++){
+                var number = i + 3;
+                document.getElementById("Plant(s) Affected:_body").removeChild(document.getElementById("Plant(s) Affected:_plant_field_" + number));
+            }
+            document.getElementById("Plant(s) Affected:").value = ""
+        }
+
+        function get_values(bad_suspects, items, total_fields){
+            var target = document.getElementById("BSAQ#:").value.replace("BSAQ20", "").replace("SAQ20", "");
+            var list_target = bad_suspects[target]
+            
+            reset_form()
+
+            total_suspect = 0
+            total_nok = 0
+
+            if (list_target != null){
+                var values = Object.keys(list_target);
+                for (i = 0; i < values.length; i++){
+                    create_plant_option_field('Plant(s) Affected:', values[i], items, total_fields);
+
+                    add_row(values[i]);
+                    add_row_date("Plant(s) Clean Point Date(s):", values[i], items, total_fields);
+                    add_row_date("Date Repair Parts Available:", values[i], items, total_fields);
+                    add_row_date("Date Repair Instructions Avail:", values[i], items, total_fields);
+
+                    var target_value = list_target[values[i]]
+                    if (target_value != null){
+                        if (i == 0){
+                            document.getElementById("Lead Plant:").value = values[i]
+                            document.getElementById("lead_plant").value = "-"
+                            document.getElementById("subject_picker").disabled = true;
+                        }
+
+                        target_value = target_value.replace("(", "").replace(")", "").replace(" ", "")
+                        suspect = return_number(target_value.split(",")[0])
+                        nok = return_number(target_value.split(",")[1])
+                        total_nok = total_nok + nok
+                        total_suspect = total_suspect + suspect
+
+                        document.getElementById(values[i] + "_suspect").value = suspect
+                        document.getElementById(values[i] + "_nok").value = nok
+                    }
+                }
+            }
+            document.getElementById("suspect").innerHTML = total_suspect;
+            document.getElementById("nok").innerHTML = total_nok;
+
+            document.getElementById("total").innerHTML = total_suspect + total_nok;
+        }
+
+        function create_plant_option_field(target, value_select, subjects, total_fields){
+            var plant_option = document.createElement("div");
+            plant_option.classList.add('select-text-field');
+
+            var name = target + "_body";
+            var target_body = document.getElementById(name);
+            var id = target + "_plant_field_" + (target_body.childNodes.length);
+            plant_option.setAttribute("id", id);
+
+            var parent_name = "\"" + name + "\"";
+            var child_name = "\"" + id + "\"";
+            var target_name = "\"" + target + "\"";
+            var value_name = "\"" + value_select + "\"";
+            var plant_option_field = "<p style='width: 75%; font-size: 12px'>" + value_select + "</p><button type='button' onclick='delete_plant_field(" + parent_name + "," + child_name + "," + target_name + "," + value_name + ")' class='button-delete-value'>X</button>";
+
+            plant_option.innerHTML = plant_option_field;
+
+            target_body.insertBefore(plant_option, target_body.childNodes[target_body.childNodes.length - 2]);
+
+            var teste = (100 - 15 * (target_body.childNodes.length - 3)) + "%"
+            document.getElementById(target).style.width = teste;
+            document.getElementById(target).value = document.getElementById(target).value + "," + value_select;
+        }
+
+        function add_plant_option_field(target, value, subjects, total_fields){
+            var value_select = document.getElementById(value).value;
+
+            create_plant_option_field(target, value_select, subjects, total_fields);
+
+            add_row(value_select);
+            add_row_date("Plant(s) Clean Point Date(s):", value_select, subjects, total_fields);
+            add_row_date("Date Repair Parts Available:", value_select, subjects, total_fields);
+            add_row_date("Date Repair Instructions Avail:", value_select, subjects, total_fields);
+        }
+
+        function change_check() {
+            if (document.getElementById("Approved_check").checked == false){
+                document.getElementById("Approved:").value = "no";
+            }
+            else {
+                document.getElementById("Approved:").value = "yes";
+            }
+            correct_status();
+        }
+
+        function return_number(value) {
+            if (isNaN(parseInt(value))) {
+                return 0;
+            } else{
+                return parseInt(value);
+            }
+        }
+
+        function check_total(value) {
+            if (isNaN(parseInt(value))) {
+                return false;
+            } else{
+                if (parseInt(value) == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+
+        function check_filled(item){
+            var value = document.getElementById(item).value;
+            if (value != NaN){
+                if (value != ""){
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
+        }
+
+        function correct_status(){
+            var under_approval = document.getElementById("Approved_check").checked;
+            var plant_contained = check_filled("Plant(s) Clean Point Date(s):");
+            var draw_down = check_filled("Date Repair Instructions Avail:");
+            var closed = check_total(document.getElementById("total").innerHTML);
+
+            target = document.getElementById("Status:");
+
+            if (under_approval == false && plant_contained == false && draw_down == false && closed == false){
+                target.value = "Under Approval";
+            }
+            if (under_approval == true && plant_contained == false && draw_down == false && closed == false){
+                target.value = "New";
+            }
+            if (under_approval == true && plant_contained == true && draw_down == false && closed == false){
+                target.value = "Plant Contained";
+            }
+            if (under_approval == true && plant_contained == true && draw_down == true && closed == false){
+                target.value = "Draw Down";
+            }
+            if (under_approval == true && plant_contained == true && draw_down == true && closed == true){
+                target.value = "Closed";
+            }
+        }
+
+        function check_update(value, items, fields){
+            var target = document.getElementById(value);
+            var subject_select = document.getElementById("subject_picker");
+
+            var index = NaN;
+            if (fields != null){
+                if (subject_select.value != "-"){
+                for (let i = 0; i < fields.length; i++) {
+                    if( fields[i] == value ){
+                        index = i;
+                    }
+                }
+
+                for (let i = 0; i < items.length; i++) {
+                    if (items[i][2] == subject_select.value){
+                        if (index != NaN){
+                            if ( items[i][index] == target.value){
+                                target.style.color = "black";
+                            }
+                            else {
+                                target.style.color = "blue";
+                            }
+                        }
+                    }
+                }
+                }
+            }
+        }
+
+        function OnInput(value, fields, items) {
+            document.getElementById(value).style.height = 0;
+            document.getElementById(value).style.height = (document.getElementById(value).scrollHeight) + "px";
+
+            correct_status();
+            check_update(value, fields, items);
+        }
+
+        function removeOptions(selectElement) {
+           var i, L = selectElement.options.length - 1;
+           for(i = L; i >= 0; i--) {
+              selectElement.remove(i);
+           }
+        }
+
+        function containsObject(obj, list) {
+            var i;
+            for (i = 0; i < list.length; i++) {
+                if (list[i] === obj) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function plant_picked(items, fields) {
+            removeOptions(document.getElementById("subject_picker"));
+
+            var subject_picker = document.getElementById("subject_picker");
+            subject_picker.disabled = false;
+            var option = document.createElement("option");
+            option.text = "-";
+            subject_picker.add(option);
+
+            var target = document.getElementById("lead_plant").value;
+
+            if (target == "-"){
+                document.getElementById("Lead Plant:").value = "";
+                document.getElementById("Lead Plant:").readOnly = false;
+            }
+            else {
+                document.getElementById("Lead Plant:").value = target;
+                document.getElementById("Lead Plant:").readOnly = true;
+            }
+            
+            var subjects = [];
+            for (let i = items.length - 1; i >= 0; i--) {
+                if( items[i][0] == target && containsObject(items[i][2], subjects) == false ){
+                    var option = document.createElement("option");
+                    option.text = items[i][2];
+                    option.value = items[i][2];
+                    subject_picker.add(option);
+                    subjects.push(items[i][2]);
+                }
+            }
+        }
+        
+        function reset_images(){
+            var all = document.getElementsByTagName("*");
+
+            for (var i=0, max=all.length; i < max; i++) {
+                //sorry for this !
+                try{
+                    if (all[i].getAttribute("id").includes("_body")){
+                        if (all[i].rows.length > 1){
+                            all[i].deleteRow(1);
+                        }
+                    }
+                }
+                catch{
+
+                }
+            }
+        }
+
+        function reset_form(){
+            reset_transit_table()
+            
+            reset_images()
+
+            num_rows_date1 = document.getElementById("Plant(s) Clean Point Date(s):_body").rows.length - 1;
+            for (let i = 0; i < num_rows_date1; i++){
+                document.getElementById("Plant(s) Clean Point Date(s):_body").deleteRow(1);
+            }
+
+            num_rows_date2 = document.getElementById("Date Repair Parts Available:_body").rows.length - 1;
+            for (let i = 0; i < num_rows_date2; i++){
+                document.getElementById("Date Repair Parts Available:_body").deleteRow(1);
+            }
+
+            num_rows_date3 = document.getElementById("Date Repair Instructions Avail:_body").rows.length - 1;
+            for (let i = 0; i < num_rows_date3; i++){
+                document.getElementById("Date Repair Instructions Avail:_body").deleteRow(1);
+            }
+
+            reset_plant_items()
+        }
+
+        function date_treatment(field, value, items, fields){
+            if (value == null){
+                return;
+            }
+
+            if (field.includes("_")){
+                add_row_date(field.split("_")[0], field.split("_")[1], items, fields);
+                document.getElementById(field).value = value;
+            }
+            else{
+                document.getElementById(field).value = value;
+            }
+        }
+
+        function plant_treatment(field, value, items, total_fields){
+            if (value == null){
+                return;
+            }
+
+            var spliced_plants = value.split(",");
+            for (i = 1; i < spliced_plants.length; i++){
+                create_plant_option_field('Plant(s) Affected:', spliced_plants[i], items, total_fields);
+            }
+        }
+
+        function table_treatment(field, value, currentRow){
+            var table = document.getElementById("transit_table");
+            
+            if (value == null){
+                return;
+            }
+
+            if (field.includes("suspect")){
+                var row = table.insertRow(table.rows.length - 2);
+                var row_field = row.insertCell(0);
+                row_field.setAttribute("style", "border: 1px solid black; border-top: 2px solid black; font-weight: bold");
+                row_field.innerHTML = field.split("_")[0] + ":";
+
+                var suspect = row.insertCell(1);
+                suspect.setAttribute("class", "th-field");
+                var suspect_field = document.createElement("INPUT");
+                suspect_field.setAttribute("name", field.split("_")[0] + "_suspect");
+                suspect_field.setAttribute("id", field.split("_")[0] + "_suspect");
+                suspect_field.setAttribute("class", "num-cell");
+                suspect_field.addEventListener("input", recalculate);
+                suspect_field.value = value;
+                suspect.appendChild(suspect_field);
+                return row;
+            }
+            else if (field.includes("nok")){
+                var nok = currentRow.insertCell(2);
+                nok.setAttribute("class", "th-field");
+                var nok_field = document.createElement("INPUT");
+                nok_field.setAttribute("name", field.split("_")[0] + "_nok");
+                nok_field.setAttribute("id", field.split("_")[0] + "_nok");
+                nok_field.setAttribute("class", "num-cell");
+                nok_field.addEventListener("input", recalculate);
+                nok_field.value = value;
+                nok.appendChild(nok_field);
+                return currentRow;
+            }
+            else if (field.includes("ok")){
+                var ok = currentRow.insertCell(3);
+                ok.setAttribute("class", "th-field");
+                var ok_field = document.createElement("INPUT");
+                ok_field.setAttribute("name", field.split("_")[0] + "_ok");
+                ok_field.setAttribute("id", field.split("_")[0] + "_ok");
+                ok_field.setAttribute("class", "num-cell");
+                ok_field.addEventListener("input", recalculate);
+                ok_field.value = value;
+                ok.appendChild(ok_field);
+                return currentRow;
+            }
+            else if (field.includes("repaired")){
+                var repaired = currentRow.insertCell(4);
+                repaired.setAttribute("class", "th-field");
+                var repaired_field = document.createElement("INPUT");
+                repaired_field.setAttribute("name", field.split("_")[0] + "_repaired");
+                repaired_field.setAttribute("id", field.split("_")[0] + "_repaired");
+                repaired_field.setAttribute("class", "num-cell");
+                repaired_field.addEventListener("input", recalculate);
+                repaired_field.value = value;
+                repaired.appendChild(repaired_field);
+                return currentRow;
+            }
+            else if (field.includes("dtg")){
+                var dtg = currentRow.insertCell(5);
+                dtg.setAttribute("class", "th-field");
+                var dtg_field = document.createElement("INPUT");
+                dtg_field.setAttribute("name", field.split("_")[0] + "_dtg");
+                dtg_field.setAttribute("id", field.split("_")[0] + "_dtg");
+                dtg_field.setAttribute("class", "num-cell");
+                dtg_field.addEventListener("input", recalculate);
+                dtg_field.value = value;
+                dtg.appendChild(dtg_field);
+                return currentRow;
+            }
+            else if (field.includes("notes")){
+                var notes = currentRow.insertCell(6);
+                notes.setAttribute("class", "th-field");
+                var notes_field = document.createElement("INPUT");
+                notes_field.setAttribute("name", field.split("_")[0] + "_notes");
+                notes_field.setAttribute("id", field.split("_")[0] + "_notes");
+                notes_field.setAttribute("class", "num-cell");
+                notes_field.addEventListener("input", recalculate);
+                notes_field.value = value;
+                notes.appendChild(notes_field);
+                return currentRow;
+            }
+        }
+
+        function subject_picked(items, fields) {
+            var target = document.getElementById("subject_picker").value;
+            var row = NaN;
+            reset_form();
+
+            target_shipment = NaN;
+            for (let i = 0; i < items.length; i++) {
+                if( items[i][2] == target ){
+                    target_shipment = items[i];
+                }
+            }
+
+            if(target_shipment != NaN){
+                for (let i = 0; i < fields.length; i++) {
+                    if (fields[i] == "Approved:") {
+                        if (target_shipment[i] == "yes"){
+                            document.getElementById(fields[i]).value = "yes";
+                            document.getElementById("Approved_check").checked = true;
+                        }
+                        else{
+                            document.getElementById(fields[i]).value = "no";
+                            document.getElementById("Approved_check").checked = false;
+                        }
+                    }
+                    else {
+                        if (i > 1){
+                            if (fields[i].includes("Plant(s) Clean Point Date(s):") || fields[i].includes("Date Repair Parts Available:") || fields[i].includes("Date Repair Instructions Avail:")){
+                                if (target_shipment[i] != "N/A" && !fields[i].includes("_image")){
+                                    date_treatment(fields[i], target_shipment[i], items, fields);
+                                }
+                                else if (fields[i].includes("image")){
+                                    if (target_shipment[i] != "N/A"){
+                                        var blob = new Blob([target_shipment[i].replace("b'", "").replace("'", "")], { type: "image/png" });
+                                        var file = new File([blob], "image.png", {type: "image/png" });
+                                        var data_transfer = new DataTransfer();
+                                        data_transfer.items.add(file);
+                                        var file_list = data_transfer.files
+
+                                        create_image_treatment(file_list, fields[i].split("_")[0] + "_body", 'data:image/png;base64,' + target_shipment[i].replace("b'", "").replace("'", ""));
+                                    }
+                                }
+                            }
+                            else if (fields[i] == "Plant(s) Affected:"){
+                                if (target_shipment[i] != "N/A"){
+                                    plant_treatment(fields[i], target_shipment[i], items, fields);
+                                }
+                            }
+                            else if (fields[i].includes("suspect") || fields[i].includes("nok") || fields[i].includes("ok") || fields[i].includes("repaired") || fields[i].includes("dtg") || fields[i].includes("notes")){
+                                if (target_shipment[i] != "N/A"){
+                                    row = table_treatment(fields[i], target_shipment[i], row);
+                                }
+                            }
+                            else if (fields[i].includes("image")){
+                                if (target_shipment[i] != "N/A"){
+                                    var blob = new Blob([target_shipment[i].replace("b'", "").replace("'", "")], { type: "image/png" });
+                                    var file = new File([blob], "image.png", {type: "image/png" });
+                                    var data_transfer = new DataTransfer();
+                                    data_transfer.items.add(file);
+                                    var file_list = data_transfer.files
+
+                                    create_image_treatment(file_list, fields[i].split("_")[0] + "_body", 'data:image/png;base64,' + target_shipment[i].replace("b'", "").replace("'", ""));
+                                }
+                            }
+                            else{
+                                document.getElementById(fields[i]).value = target_shipment[i];
+                                triggerEvent_input(document.getElementById(fields[i]))
+                            }
+                        }
+                        if (target_shipment[i] == undefined && i > 1){
+                            if (document.getElementById(fields[i]) != null){
+                                document.getElementById(fields[i]).value = "";
+                            }
+                        }
+                    }
+                }
+            }
+            correct_status();
+            recalculate();
+        }
+        
+        function triggerEvent_input(el) {
+            var event = new Event('input', {
+                bubbles: true,
+                cancelable: true,
+            });
+  
+            el.dispatchEvent(event);
+        }
+
+        function recalculate() {
+            var suspect_total = 0;
+            var nok_total = 0;
+            var ok_total = 0;
+            var repaired_total = 0;
+
+            var table = document.getElementById("transit_table");
+            for (i = 0; i < table.rows.length; i++) {
+                if (table.rows[i].cells != null){
+                    for (j = 0; j < table.rows[i].cells.length; j++){
+                        if (table.rows[i].cells[j].childNodes.length > 0){
+                            try{
+                                var id = String(table.rows[i].cells[j].childNodes[0].getAttribute("id"));
+                            }
+                            catch(e){
+                                var id = "";
+                            }
+
+                            if (id.includes("suspect")){
+                                suspect_total += return_number(table.rows[i].cells[j].childNodes[0].value);
+                            }
+                            else if (id.includes("nok")){
+                                nok_total += return_number(table.rows[i].cells[j].childNodes[0].value);
+                            }
+                            else if (id.includes("ok")){
+                                ok_total += return_number(table.rows[i].cells[j].childNodes[0].value);
+                            }
+                            else if (id.includes("repaired")){
+                                repaired_total += return_number(table.rows[i].cells[j].childNodes[0].value);
+                            }
+                        }
+                    }
+                } 
+            }
+
+            document.getElementById("suspect").innerHTML = suspect_total;
+            document.getElementById("nok").innerHTML = nok_total;
+            document.getElementById("ok").innerHTML = ok_total;
+            document.getElementById("repaired").innerHTML = repaired_total;
+
+            document.getElementById("total").innerHTML = suspect_total + nok_total;
+        }
+    </script>
+</body>
+</html>
